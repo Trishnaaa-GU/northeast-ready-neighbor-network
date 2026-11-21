@@ -24,8 +24,8 @@ export default defineConfig({
       filename: "sw.js",
       devOptions: { enabled: false },
       workbox: {
-        globPatterns: ["**/*.{js,css,svg,png,ico,webmanifest,woff2}"],
-        navigateFallback: null,
+        globPatterns: ["**/*.{js,css,html,svg,png,ico,webmanifest,woff2,json}"],
+        navigateFallback: "/index.html",
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
@@ -41,15 +41,6 @@ export default defineConfig({
               networkTimeoutSeconds: 4,
               matchOptions: { ignoreVary: true, ignoreSearch: true },
               expiration: { maxEntries: 40 },
-            },
-          },
-          {
-            urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
-            handler: "CacheFirst",
-            options: {
-              cacheName: "nc-fonts",
-              expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 },
-              cacheableResponse: { statuses: [0, 200] },
             },
           },
         ],
