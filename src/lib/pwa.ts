@@ -77,7 +77,8 @@ export async function setupServiceWorker(): Promise<void> {
       await unregisterAppWorkers();
       return;
     }
-    await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+    const { registerSW } = await import("virtual:pwa-register");
+    registerSW({ immediate: true });
     await navigator.serviceWorker.ready;
     await warmPageCache();
   } catch (err) {
