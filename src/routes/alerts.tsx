@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/app/PageHeader";
 import { AlertCard } from "@/components/app/AlertCard";
 import { AlertsUpdated } from "@/components/app/AlertsUpdated";
 import { DemoNote } from "@/components/app/DemoNote";
+import { SampleAlertsNote } from "@/components/app/SampleDataTag";
 import { SeverityBadge } from "@/components/app/SeverityBadge";
 
 export const Route = createFileRoute("/alerts")({
@@ -83,6 +84,9 @@ function AlertsPage() {
         </ul>
       )}
       <DemoNote />
+      <footer>
+        <SampleAlertsNote />
+      </footer>
     </div>
   );
 }

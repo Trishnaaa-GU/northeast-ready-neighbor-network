@@ -3,6 +3,7 @@ import type { Alert } from "@/data/alerts";
 import { formatTime } from "@/lib/messages";
 import { SeverityBadge, SEVERITY_BORDER } from "./SeverityBadge";
 import { useHydrated } from "@tanstack/react-router";
+import { SampleDataTag } from "./SampleDataTag";
 
 export function AlertCard({ alert }: { alert: Alert }) {
   const hydrated = useHydrated();
@@ -11,6 +12,7 @@ export function AlertCard({ alert }: { alert: Alert }) {
       <div className="flex flex-wrap items-center gap-2">
         <SeverityBadge severity={alert.severity} />
         <span className="text-sm font-bold text-primary">{alert.state}</span>
+        <SampleDataTag />
         <time className="ml-auto text-sm text-muted-foreground" dateTime={alert.issuedAt}>
           {hydrated ? formatTime(alert.issuedAt) : ""}
         </time>

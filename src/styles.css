@@ -1,19 +1,17 @@
 /*
  * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
- * Keep every @import in this top block. Never @import a remote URL; web fonts load via <link>
- * in src/routes/__root.tsx.
+ * Keep every @import in this top block. Never load fonts from the internet: the app uses
+ * the device's system fonts so every screen renders offline.
  */
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/atkinson-hyperlegible/400.css";
-@import "@fontsource/atkinson-hyperlegible/700.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Atkinson Hyperlegible", system-ui, "Noto Sans", "Nirmala UI", "Segoe UI", sans-serif;
-  --font-display: "Atkinson Hyperlegible", system-ui, "Noto Sans", "Nirmala UI", sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Nirmala UI", sans-serif;
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Nirmala UI", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
