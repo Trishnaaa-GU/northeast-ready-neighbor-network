@@ -7,6 +7,7 @@ import {
 import { useApp } from "@/lib/app-state";
 import type { TKey } from "@/lib/i18n";
 import { ALERTS, SEVERITY_ORDER } from "@/data/alerts";
+import { SampleDataTag, SampleAlertsNote } from "@/components/app/SampleDataTag";
 import { SeverityBadge } from "@/components/app/SeverityBadge";
 import { AlertsUpdated } from "@/components/app/AlertsUpdated";
 import { useGeolocation } from "@/hooks/use-geolocation";
@@ -86,6 +87,7 @@ function Home() {
               <TriangleAlert className="h-5 w-5 text-sos" aria-hidden />
               <span className="text-sm font-bold text-sos uppercase">{t("home.latestAlert")}</span>
               <SeverityBadge severity={topAlert.severity} />
+              <SampleDataTag />
             </div>
             <p className="mt-2 text-lg leading-snug font-bold">{topAlert.title}</p>
             <p className="text-sm text-muted-foreground">
@@ -96,6 +98,7 @@ function Home() {
             </span>
           </Link>
           <AlertsUpdated />
+          <SampleAlertsNote />
         </section>
       )}
 

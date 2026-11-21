@@ -61,7 +61,12 @@ export function AppHeader() {
         </div>
       </div>
       <div className="mx-auto flex max-w-2xl flex-wrap items-center gap-2 px-4 pb-3">
-        <StatusBadge />
+        <div className="flex flex-col items-start gap-1">
+          <StatusBadge />
+          <p className="text-sm font-semibold text-success-soft">
+            Works offline: guides and helplines saved on this device.
+          </p>
+        </div>
         {!isStandalone && (
           <button
             type="button"
