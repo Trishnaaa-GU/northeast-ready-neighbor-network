@@ -9,7 +9,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import { VitePWA } from "vite-plugin-pwa";
 
+const previewHosts = ["sb-1t0horlp3xfz.vercel.run"];
+
 export default defineConfig({
+  vite: {
+    server: { host: true, allowedHosts: previewHosts },
+    preview: { allowedHosts: previewHosts },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     server: { entry: "server" },
