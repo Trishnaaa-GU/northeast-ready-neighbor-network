@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as FirstAidRouteImport } from './routes/first-aid'
+import { Route as GuidesRouteImport } from './routes/guides'
+import { Route as HelplinesRouteImport } from './routes/helplines'
+import { Route as KitRouteImport } from './routes/kit'
+import { Route as ReportRouteImport } from './routes/report'
+import { Route as SafeRouteImport } from './routes/safe'
+import { Route as SheltersRouteImport } from './routes/shelters'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstAidRoute = FirstAidRouteImport.update({
+  id: '/first-aid',
+  path: '/first-aid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesRoute = GuidesRouteImport.update({
+  id: '/guides',
+  path: '/guides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelplinesRoute = HelplinesRouteImport.update({
+  id: '/helplines',
+  path: '/helplines',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitRoute = KitRouteImport.update({
+  id: '/kit',
+  path: '/kit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafeRoute = SafeRouteImport.update({
+  id: '/safe',
+  path: '/safe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SheltersRoute = SheltersRouteImport.update({
+  id: '/shelters',
+  path: '/shelters',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/first-aid': typeof FirstAidRoute
+  '/guides': typeof GuidesRoute
+  '/helplines': typeof HelplinesRoute
+  '/kit': typeof KitRoute
+  '/report': typeof ReportRoute
+  '/safe': typeof SafeRoute
+  '/shelters': typeof SheltersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/first-aid': typeof FirstAidRoute
+  '/guides': typeof GuidesRoute
+  '/helplines': typeof HelplinesRoute
+  '/kit': typeof KitRoute
+  '/report': typeof ReportRoute
+  '/safe': typeof SafeRoute
+  '/shelters': typeof SheltersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/first-aid': typeof FirstAidRoute
+  '/guides': typeof GuidesRoute
+  '/helplines': typeof HelplinesRoute
+  '/kit': typeof KitRoute
+  '/report': typeof ReportRoute
+  '/safe': typeof SafeRoute
+  '/shelters': typeof SheltersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/first-aid'
+    | '/guides'
+    | '/helplines'
+    | '/kit'
+    | '/report'
+    | '/safe'
+    | '/shelters'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alerts'
+    | '/first-aid'
+    | '/guides'
+    | '/helplines'
+    | '/kit'
+    | '/report'
+    | '/safe'
+    | '/shelters'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/first-aid'
+    | '/guides'
+    | '/helplines'
+    | '/kit'
+    | '/report'
+    | '/safe'
+    | '/shelters'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertsRoute: typeof AlertsRoute
+  FirstAidRoute: typeof FirstAidRoute
+  GuidesRoute: typeof GuidesRoute
+  HelplinesRoute: typeof HelplinesRoute
+  KitRoute: typeof KitRoute
+  ReportRoute: typeof ReportRoute
+  SafeRoute: typeof SafeRoute
+  SheltersRoute: typeof SheltersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-aid': {
+      id: '/first-aid'
+      path: '/first-aid'
+      fullPath: '/first-aid'
+      preLoaderRoute: typeof FirstAidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides': {
+      id: '/guides'
+      path: '/guides'
+      fullPath: '/guides'
+      preLoaderRoute: typeof GuidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/helplines': {
+      id: '/helplines'
+      path: '/helplines'
+      fullPath: '/helplines'
+      preLoaderRoute: typeof HelplinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kit': {
+      id: '/kit'
+      path: '/kit'
+      fullPath: '/kit'
+      preLoaderRoute: typeof KitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safe': {
+      id: '/safe'
+      path: '/safe'
+      fullPath: '/safe'
+      preLoaderRoute: typeof SafeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shelters': {
+      id: '/shelters'
+      path: '/shelters'
+      fullPath: '/shelters'
+      preLoaderRoute: typeof SheltersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertsRoute: AlertsRoute,
+  FirstAidRoute: FirstAidRoute,
+  GuidesRoute: GuidesRoute,
+  HelplinesRoute: HelplinesRoute,
+  KitRoute: KitRoute,
+  ReportRoute: ReportRoute,
+  SafeRoute: SafeRoute,
+  SheltersRoute: SheltersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

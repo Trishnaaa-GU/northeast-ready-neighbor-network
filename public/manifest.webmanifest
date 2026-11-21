@@ -1,0 +1,19 @@
+{
+  "name": "Northeast Connect — Emergency Help",
+  "short_name": "NE Connect",
+  "description": "Offline emergency help for floods, landslides and earthquakes in North East India.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf9f4",
+  "theme_color": "#1d3a78",
+  "lang": "en",
+  "categories": ["utilities", "medical", "navigation"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
